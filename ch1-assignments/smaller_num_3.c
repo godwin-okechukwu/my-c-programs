@@ -1,27 +1,29 @@
 /* program compares two numbers and prints the smaller of them, 
-using a for loop */
-
+using a while loop */
 #include <stdio.h>
 
 int smaller(int a, int b);
 
 int main ()
 {
-    int count, n, a, b, min;
+    int a, b, min;
 
-    printf("How many pairs of numbers? ");
-    scanf("%d", &n);
+    printf("To STOP, enter 0 for each number\n");
 
-    for (count = 1; count <= n; ++count)
+    printf("\nPlease enter the first number: ");
+    scanf("%d", &a);
+    printf("Please enter the second number: ");
+    scanf("%d", &b);
+
+    while (a != 0 || b != 0)
     {
+        min = smaller(a, b);
+        printf("\nThe smaller number is = %d\n", min);
+
         printf("\nPlease enter the first number: ");
         scanf("%d", &a);
         printf("Please enter the second number: ");
         scanf("%d", &b);
-
-        min = smaller(a, b);
-
-        printf("\nThe smaller number is: %d\n", min);
     }
 }
 
